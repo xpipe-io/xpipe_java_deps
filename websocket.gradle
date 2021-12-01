@@ -1,0 +1,24 @@
+dependencies {
+    implementation files("$buildDir/generated-modules/Java-WebSocket-1.5.1.jar")
+}
+
+addDependenciesModuleInfo {
+    overwriteExistingFiles = true
+    jdepsExtraArgs = ['-q']
+    outputDirectory = file("$buildDir/generated-modules")
+    modules {
+        module {
+            artifact 'org.java-websocket:Java-WebSocket:1.5.1'
+            moduleInfoSource = '''
+                module org.java_websocket {
+                    exports org.java_websocket;
+                    exports org.java_websocket.server;
+                    exports org.java_websocket.handshake;
+                    exports org.java_websocket.drafts;
+                    
+                    requires org.slf4j;
+                }
+            '''
+        }
+    }
+}

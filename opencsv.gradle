@@ -1,0 +1,24 @@
+dependencies {
+    implementation files("$buildDir/generated-modules/opencsv-5.5.2.jar")
+}
+
+addDependenciesModuleInfo {
+    overwriteExistingFiles = true
+    jdepsExtraArgs = ['-q']
+    outputDirectory = file("$buildDir/generated-modules")
+    modules {
+        module {
+            artifact 'com.opencsv:opencsv:5.5.2'
+            moduleInfoSource = '''
+                module com.opencsv {
+                    requires org.apache.commons.lang;
+                
+                    exports com.opencsv;
+                    exports com.opencsv.bean;
+                    exports com.opencsv.enums;
+                    exports com.opencsv.exceptions;
+                }
+            '''
+        }
+    }
+}

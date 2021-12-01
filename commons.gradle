@@ -1,0 +1,45 @@
+dependencies {
+    implementation files("$buildDir/generated-modules/commons-lang3-3.12.0.jar")
+    implementation files("$buildDir/generated-modules/commons-io-2.8.0.jar")
+    implementation files("$buildDir/generated-modules/commons-collections4-4.4.jar")
+}
+
+addDependenciesModuleInfo {
+    overwriteExistingFiles = true
+    jdepsExtraArgs = ['-q']
+    outputDirectory = file("$buildDir/generated-modules")
+    modules {
+        module {
+            artifact 'org.apache.commons:commons-lang3:3.12.0'
+            moduleInfoSource = '''
+                module org.apache.commons.lang {
+                    exports org.apache.commons.lang3;
+                    exports org.apache.commons.lang3.function;
+                    exports org.apache.commons.lang3.arch;
+                    exports org.apache.commons.lang3.reflect;
+                }
+            '''
+        }
+        module {
+            artifact 'commons-io:commons-io:2.8.0'
+            moduleInfoSource = '''
+                module org.apache.commons.io {
+                    exports org.apache.commons.io;
+                    exports org.apache.commons.io.file;
+                    exports org.apache.commons.io.input;
+                    exports org.apache.commons.io.filefilter;
+                }
+            '''
+        }
+        module {
+            artifact 'org.apache.commons:commons-collections4:4.4'
+            moduleInfoSource = '''
+                module org.apache.commons.collections4 {
+                    exports org.apache.commons.collections4;
+                    exports org.apache.commons.collections4.bidimap;
+                    exports org.apache.commons.collections4.multimap;
+                }
+            '''
+        }
+    }
+}
