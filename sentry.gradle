@@ -1,5 +1,6 @@
 dependencies {
-    implementation files("$buildDir/generated-modules/sentry-5.0.1.jar")
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation files("$buildDir/generated-modules/sentry-5.4.3.jar")
 }
 
 addDependenciesModuleInfo {
@@ -8,7 +9,7 @@ addDependenciesModuleInfo {
     outputDirectory = file("$buildDir/generated-modules")
     modules {
 		module {
-            artifact 'io.sentry:sentry:5.0.1'
+            artifact 'io.sentry:sentry:5.4.3'
             moduleInfoSource = '''
                 module io.sentry {
                     exports io.sentry;
