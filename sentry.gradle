@@ -13,24 +13,24 @@ addDependenciesModuleInfo {
             moduleInfoSource = '''
                 module io.sentry {
                     exports io.sentry;
-                    opens io.sentry to com.google.gson;
+                    opens io.sentry to gson;
                     
                     exports io.sentry.protocol;
-                    opens io.sentry.protocol to com.google.gson;
+                    opens io.sentry.protocol to gson;
                     
                     exports io.sentry.adapters;
-                    opens io.sentry.adapters to com.google.gson;
+                    opens io.sentry.adapters to gson;
                     
                     exports io.sentry.config;
-                    opens io.sentry.config to com.google.gson;
+                    opens io.sentry.config to gson;
                     
                     exports io.sentry.transport;
-                    opens io.sentry.transport to com.google.gson;
+                    opens io.sentry.transport to gson;
                     
                     exports io.sentry.util;
-                    opens io.sentry.util to com.google.gson;
+                    opens io.sentry.util to gson;
                     
-                    requires com.google.gson;
+                    requires gson;
                 }
             '''
         }
