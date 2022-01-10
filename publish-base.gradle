@@ -1,0 +1,20 @@
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    repositories {
+        maven {
+            url "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                setUsername "${project.hasProperty('sonatypeUsername') ? project.property('sonatypeUsername') : ''}"
+                setPassword "${project.hasProperty('sonatypePassword') ? project.property('sonatypePassword') : ''}"
+            }
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}
