@@ -3,7 +3,10 @@ tasks.withType(JavaCompile).configureEach {
     targetCompatibility = JavaVersion.VERSION_17
     modularity.inferModulePath = true
     options.encoding = 'UTF-8'
+    options.compilerArgs << "-Xlint:unchecked"
 }
+
+
 
 javadoc{
     source = sourceSets.main.allJava
@@ -11,5 +14,10 @@ javadoc{
         addStringOption('-release', '17')
         addStringOption('link', 'https://docs.oracle.com/en/java/javase/17/docs/api/')
         addBooleanOption('html5', true)
+        addStringOption('Xdoclint:none', '-quiet')
     }
+}
+
+repositories {
+    mavenCentral()
 }

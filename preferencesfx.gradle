@@ -1,5 +1,8 @@
 dependencies {
     implementation files("$buildDir/generated-modules/preferencesfx-core-11.8.0.jar")
+    implementation group: 'com.dlsc.formsfx', name: 'formsfx-core', version: '11.3.2'
+    implementation group: 'org.kordamp.ikonli', name: 'ikonli-javafx', version: "12.2.0"
+    implementation group: 'org.kordamp.ikonli', name: 'ikonli-material-pack', version: "12.2.0"
 }
 
 addDependenciesModuleInfo {
