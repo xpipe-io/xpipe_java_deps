@@ -18,6 +18,8 @@ addDependenciesModuleInfo {
                     exports org.apache.commons.lang3.arch;
                     exports org.apache.commons.lang3.reflect;
                     exports org.apache.commons.lang3.builder;
+                    exports org.apache.commons.lang3.text;
+                    exports org.apache.commons.lang3.tuple;
                 }
             '''
         }
