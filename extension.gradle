@@ -1,0 +1,17 @@
+task copyRuntimeLibs(type: Copy) {
+    into "$buildDir/libs"
+    from configurations.runtimeClasspath
+    exclude "${project.name}.jar"
+    duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+}
+jar.finalizedBy(copyRuntimeLibs)
+
+apply from: "$rootDir/deps/java.gradle"
+apply from: "$rootDir/deps/javafx.gradle"
+apply from: "$rootDir/deps/jackson.gradle"
+
+dependencies {
+    compileOnly project(':core')
+    compileOnly project(':extension')
+    compileOnly project(':fxcomps')
+}

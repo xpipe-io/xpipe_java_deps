@@ -17,7 +17,7 @@ addDependenciesModuleInfo {
                     
                     requires de.vandermeer.skb_interfaces;
                     requires de.vandermeer.ascii_utf_themes;
-                    requires org.apache.commons.lang;
+                    requires org.apache.commons.lang3;
                 }
             '''
         }
@@ -36,7 +36,7 @@ addDependenciesModuleInfo {
                     exports de.vandermeer.skb.interfaces.strategies.collections;
                     exports de.vandermeer.skb.interfaces.strategies.collections.list;
                     
-                    requires org.apache.commons.lang;
+                    requires org.apache.commons.lang3;
                 }
             '''
         }
@@ -49,7 +49,7 @@ addDependenciesModuleInfo {
                     exports de.vandermeer.asciithemes.u8;
                     
                     requires de.vandermeer.skb_interfaces;
-                    requires org.apache.commons.lang;
+                    requires org.apache.commons.lang3;
                 }
             '''
         }

@@ -1,7 +1,14 @@
+configurations {
+    dep
+}
+
 dependencies {
-    implementation files("$buildDir/generated-modules/commons-lang3-3.12.0.jar")
-    implementation files("$buildDir/generated-modules/commons-io-2.8.0.jar")
-    implementation files("$buildDir/generated-modules/commons-collections4-4.4.jar")
+    dep files("$buildDir/generated-modules/commons-lang3-3.12.0.jar")
+    dep files("$buildDir/generated-modules/commons-io-2.11.0.jar")
+    dep files("$buildDir/generated-modules/commons-collections4-4.4.jar")
+    dep files("$buildDir/generated-modules/commons-math3-3.6.1.jar")
+    dep 'org.apache.commons:commons-compress:1.21'
+    dep 'commons-codec:commons-codec:1.15'
 }
 
 addDependenciesModuleInfo {
@@ -12,7 +19,7 @@ addDependenciesModuleInfo {
         module {
             artifact 'org.apache.commons:commons-lang3:3.12.0'
             moduleInfoSource = '''
-                module org.apache.commons.lang {
+                module org.apache.commons.lang3 {
                     exports org.apache.commons.lang3;
                     exports org.apache.commons.lang3.function;
                     exports org.apache.commons.lang3.arch;
@@ -24,13 +31,14 @@ addDependenciesModuleInfo {
             '''
         }
         module {
-            artifact 'commons-io:commons-io:2.8.0'
+            artifact 'commons-io:commons-io:2.11.0'
             moduleInfoSource = '''
                 module org.apache.commons.io {
                     exports org.apache.commons.io;
                     exports org.apache.commons.io.file;
                     exports org.apache.commons.io.input;
                     exports org.apache.commons.io.filefilter;
+                    exports org.apache.commons.io.output;
                 }
             '''
         }
@@ -41,6 +49,14 @@ addDependenciesModuleInfo {
                     exports org.apache.commons.collections4;
                     exports org.apache.commons.collections4.bidimap;
                     exports org.apache.commons.collections4.multimap;
+                }
+            '''
+        }
+        module {
+            artifact 'org.apache.commons:commons-math3:3.6.1'
+            moduleInfoSource = '''
+                module commons.math3 {
+                    exports org.apache.commons.math3;
                 }
             '''
         }

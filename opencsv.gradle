@@ -11,7 +11,7 @@ addDependenciesModuleInfo {
             artifact 'com.opencsv:opencsv:5.5.2'
             moduleInfoSource = '''
                 module com.opencsv {
-                    requires org.apache.commons.lang;
+                    requires org.apache.commons.lang3;
                 
                     exports com.opencsv;
                     exports com.opencsv.bean;

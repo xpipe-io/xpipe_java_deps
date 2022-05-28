@@ -18,7 +18,7 @@ addDependenciesModuleInfo {
                     
                     requires java.logging;
                     requires org.apache.commons.io;
-                    requires org.apache.commons.lang;
+                    requires org.apache.commons.lang3;
                     requires com.fasterxml.jackson.databind;
                     
                     opens org.kohsuke.github;
