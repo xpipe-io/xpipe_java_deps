@@ -9,9 +9,11 @@ jar.finalizedBy(copyRuntimeLibs)
 apply from: "$rootDir/deps/java.gradle"
 apply from: "$rootDir/deps/javafx.gradle"
 apply from: "$rootDir/deps/jackson.gradle"
+apply from: "$rootDir/deps/junit.gradle"
 
 dependencies {
-    compileOnly project(':core')
-    compileOnly project(':extension')
-    compileOnly project(':fxcomps')
+    dep project(':core')
+    dep project(':extension')
+    dep project(':fxcomps')
+    dep project(':charsetter')
 }

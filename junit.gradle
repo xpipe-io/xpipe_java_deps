@@ -6,6 +6,7 @@ dependencies {
 }
 
 test {
+    jvmArgs "--add-opens", "java.base/java.lang=io.xpipe.extension"
     useJUnitPlatform()
     testLogging {
         exceptionFormat = 'full'
