@@ -12,8 +12,7 @@ apply from: "$rootDir/deps/jackson.gradle"
 apply from: "$rootDir/deps/junit.gradle"
 
 dependencies {
-    dep project(':core')
-    dep project(':extension')
-    dep project(':fxcomps')
-    dep project(':charsetter')
+    compileOnly project(':core')
+    compileOnly project(':extension')
+    compileOnly project(':fxcomps')
 }

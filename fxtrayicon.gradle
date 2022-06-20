@@ -14,9 +14,9 @@ addDependenciesModuleInfo {
                     exports com.dustinredmond.fxtrayicon;
                     exports com.dustinredmond.fxtrayicon.annotations;
                     
-    requires transitive javafx.controls;
-    requires transitive javafx.base;
-    requires transitive java.desktop;
+                    requires transitive javafx.controls;
+                    requires transitive javafx.base;
+                    requires transitive java.desktop;
                 }
             '''
         }
